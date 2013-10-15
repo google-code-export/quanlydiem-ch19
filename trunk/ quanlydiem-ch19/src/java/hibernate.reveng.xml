@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="quan_ly_diem"/>
+  <table-filter match-name="can_bo"/>
+  <table-filter match-name="mien_hoc"/>
+  <table-filter match-name="nien_khoa_hoc_ky"/>
+  <table-filter match-name="sinh_vien"/>
+  <table-filter match-name="sinh_vien_dang_ky_hoc"/>
+  <table-filter match-name="lop_mon_hoc"/>
+  <table-filter match-name="mon_hoc"/>
+  <table-filter match-name="ly_do_mien"/>
+  <table-filter match-name="ket_qua_hoc"/>
+</hibernate-reverse-engineering>

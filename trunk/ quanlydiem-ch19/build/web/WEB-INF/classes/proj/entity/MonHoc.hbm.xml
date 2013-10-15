@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2013 9:41:35 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="proj.entity.MonHoc" table="mon_hoc" catalog="quan_ly_diem">
+        <id name="idMonHoc" type="int">
+            <column name="ID_MON_HOC" />
+            <generator class="assigned" />
+        </id>
+        <property name="ma" type="string">
+            <column name="MA" length="45" />
+        </property>
+        <property name="ten" type="string">
+            <column name="TEN" />
+        </property>
+        <property name="soTc" type="java.lang.Integer">
+            <column name="SO_TC" />
+        </property>
+        <property name="soTietLt" type="string">
+            <column name="SO_TIET_LT" length="45" />
+        </property>
+        <property name="soTietTh" type="java.lang.Integer">
+            <column name="SO_TIET_TH" />
+        </property>
+        <property name="idDonViQl" type="java.lang.Integer">
+            <column name="ID_DON_VI_QL" />
+        </property>
+        <set name="mienHocs" inverse="true">
+            <key>
+                <column name="ID_MON_HOC" not-null="true" />
+            </key>
+            <one-to-many class="proj.entity.MienHoc" />
+        </set>
+        <set name="lopMonHocs" inverse="true">
+            <key>
+                <column name="ID_MON_HOC" />
+            </key>
+            <one-to-many class="proj.entity.LopMonHoc" />
+        </set>
+        <set name="ketQuaHocs" inverse="true">
+            <key>
+                <column name="ID_MON_HOC" not-null="true" />
+            </key>
+            <one-to-many class="proj.entity.KetQuaHoc" />
+        </set>
+    </class>
+</hibernate-mapping>

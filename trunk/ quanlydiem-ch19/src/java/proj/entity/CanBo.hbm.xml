@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2013 9:41:35 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="proj.entity.CanBo" table="can_bo" catalog="quan_ly_diem">
+        <id name="idCanBo" type="int">
+            <column name="ID_CAN_BO" />
+            <generator class="assigned" />
+        </id>
+        <property name="macb" type="string">
+            <column name="MACB" length="45" />
+        </property>
+        <property name="idConNguoi" type="java.lang.Integer">
+            <column name="ID_CON_NGUOI" />
+        </property>
+        <property name="idLoaiCanBo" type="java.lang.Integer">
+            <column name="ID_LOAI_CAN_BO" />
+        </property>
+        <property name="tdVanHoa" type="string">
+            <column name="TD_VAN_HOA" length="45" />
+        </property>
+        <property name="idHocVi" type="java.lang.Integer">
+            <column name="ID_HOC_VI" />
+        </property>
+        <property name="idHocHam" type="java.lang.Integer">
+            <column name="ID_HOC_HAM" />
+        </property>
+        <property name="idNgach" type="java.lang.Integer">
+            <column name="ID_NGACH" />
+        </property>
+        <property name="bac" type="java.lang.Integer">
+            <column name="BAC" />
+        </property>
+        <property name="heSo" type="java.lang.Integer">
+            <column name="HE_SO" />
+        </property>
+        <property name="idTrinhDoNgoaiNgu" type="java.lang.Integer">
+            <column name="ID_TRINH_DO_NGOAI_NGU" />
+        </property>
+        <property name="gioNghiaVu" type="java.lang.Integer">
+            <column name="GIO_NGHIA_VU" />
+        </property>
+        <set name="lopMonHocs" inverse="true">
+            <key>
+                <column name="ID_CAN_BO" />
+            </key>
+            <one-to-many class="proj.entity.LopMonHoc" />
+        </set>
+    </class>
+</hibernate-mapping>

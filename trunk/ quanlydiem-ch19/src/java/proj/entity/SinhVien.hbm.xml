@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2013 9:41:35 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="proj.entity.SinhVien" table="sinh_vien" catalog="quan_ly_diem">
+        <id name="idSinhVien" type="int">
+            <column name="ID_SINH_VIEN" />
+            <generator class="assigned" />
+        </id>
+        <property name="masv" type="string">
+            <column name="MASV" length="45" />
+        </property>
+        <property name="idConNguoi" type="java.lang.Integer">
+            <column name="ID_CON_NGUOI" />
+        </property>
+        <property name="idKhoaTs" type="java.lang.Integer">
+            <column name="ID_KHOA_TS" />
+        </property>
+        <property name="idLopQuanLy" type="java.lang.Integer">
+            <column name="ID_LOP_QUAN_LY" />
+        </property>
+        <set name="sinhVienDangKyHocs" inverse="true">
+            <key>
+                <column name="ID_SINH_VIEN" not-null="true" />
+            </key>
+            <one-to-many class="proj.entity.SinhVienDangKyHoc" />
+        </set>
+        <set name="mienHocs" inverse="true">
+            <key>
+                <column name="ID_SINH_VIEN" not-null="true" />
+            </key>
+            <one-to-many class="proj.entity.MienHoc" />
+        </set>
+        <set name="ketQuaHocs" inverse="true">
+            <key>
+                <column name="ID_SINH_VIEN" not-null="true" />
+            </key>
+            <one-to-many class="proj.entity.KetQuaHoc" />
+        </set>
+    </class>
+</hibernate-mapping>

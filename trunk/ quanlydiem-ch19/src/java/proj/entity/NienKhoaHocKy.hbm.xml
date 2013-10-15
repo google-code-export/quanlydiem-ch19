@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2013 9:41:35 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="proj.entity.NienKhoaHocKy" table="nien_khoa_hoc_ky" catalog="quan_ly_diem">
+        <id name="idNienKhoaHocKy" type="int">
+            <column name="ID_NIEN_KHOA_HOC_KY" />
+            <generator class="assigned" />
+        </id>
+        <property name="hocKy" type="java.lang.Integer">
+            <column name="HOC_KY" />
+        </property>
+        <property name="nam1" type="java.lang.Integer">
+            <column name="NAM_1" />
+        </property>
+        <property name="nam2" type="java.lang.Integer">
+            <column name="NAM_2" />
+        </property>
+        <set name="lopMonHocs" inverse="true">
+            <key>
+                <column name="ID_NIEN_KHOA_HOC_KY" />
+            </key>
+            <one-to-many class="proj.entity.LopMonHoc" />
+        </set>
+    </class>
+</hibernate-mapping>

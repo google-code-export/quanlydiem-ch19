@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2013 9:41:35 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="proj.entity.LopMonHoc" table="lop_mon_hoc" catalog="quan_ly_diem">
+        <id name="idLopMonHoc" type="int">
+            <column name="ID_LOP_MON_HOC" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="canBo" class="proj.entity.CanBo" fetch="select">
+            <column name="ID_CAN_BO" />
+        </many-to-one>
+        <many-to-one name="monHoc" class="proj.entity.MonHoc" fetch="select">
+            <column name="ID_MON_HOC" />
+        </many-to-one>
+        <many-to-one name="nienKhoaHocKy" class="proj.entity.NienKhoaHocKy" fetch="select">
+            <column name="ID_NIEN_KHOA_HOC_KY" />
+        </many-to-one>
+        <property name="ma" type="string">
+            <column name="MA" length="45" />
+        </property>
+        <property name="trangThai" type="java.lang.Integer">
+            <column name="TRANG_THAI" />
+        </property>
+        <property name="soSvMax" type="java.lang.Integer">
+            <column name="SO_SV_MAX" />
+        </property>
+        <property name="idLopDuKien" type="java.lang.Integer">
+            <column name="ID_LOP_DU_KIEN" />
+        </property>
+        <set name="ketQuaHocs" inverse="true">
+            <key>
+                <column name="ID_LOP_MON_HOC" not-null="true" />
+            </key>
+            <one-to-many class="proj.entity.KetQuaHoc" />
+        </set>
+        <set name="sinhVienDangKyHocs" inverse="true">
+            <key>
+                <column name="ID_LOP_MON_HOC" not-null="true" />
+            </key>
+            <one-to-many class="proj.entity.SinhVienDangKyHoc" />
+        </set>
+    </class>
+</hibernate-mapping>
