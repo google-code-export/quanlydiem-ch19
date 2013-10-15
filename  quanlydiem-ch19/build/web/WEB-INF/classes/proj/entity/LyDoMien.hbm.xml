@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2013 9:41:35 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="proj.entity.LyDoMien" table="ly_do_mien" catalog="quan_ly_diem">
+        <id name="idLyDoMien" type="int">
+            <column name="ID_LY_DO_MIEN" />
+            <generator class="assigned" />
+        </id>
+        <property name="lyDo" type="string">
+            <column name="LY_DO" length="45" />
+        </property>
+        <set name="mienHocs" inverse="true">
+            <key>
+                <column name="ID_LY_DO_MIEN" not-null="true" />
+            </key>
+            <one-to-many class="proj.entity.MienHoc" />
+        </set>
+    </class>
+</hibernate-mapping>

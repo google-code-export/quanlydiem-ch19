@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2013 9:41:35 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="proj.entity.SinhVienDangKyHoc" table="sinh_vien_dang_ky_hoc" catalog="quan_ly_diem">
+        <composite-id name="id" class="proj.entity.SinhVienDangKyHocId">
+            <key-property name="idSinhVien" type="int">
+                <column name="ID_SINH_VIEN" />
+            </key-property>
+            <key-property name="idLopMonHoc" type="int">
+                <column name="ID_LOP_MON_HOC" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="sinhVien" class="proj.entity.SinhVien" update="false" insert="false" fetch="select">
+            <column name="ID_SINH_VIEN" not-null="true" />
+        </many-to-one>
+        <many-to-one name="lopMonHoc" class="proj.entity.LopMonHoc" update="false" insert="false" fetch="select">
+            <column name="ID_LOP_MON_HOC" not-null="true" />
+        </many-to-one>
+        <property name="trangThai" type="java.lang.Integer">
+            <column name="TRANG_THAI" />
+        </property>
+    </class>
+</hibernate-mapping>

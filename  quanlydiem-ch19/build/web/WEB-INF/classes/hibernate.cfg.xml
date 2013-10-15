@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/quan_ly_diem</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">1234</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property>
+    <mapping resource="proj/entity/NienKhoaHocKy.hbm.xml"/>
+    <mapping resource="proj/entity/LyDoMien.hbm.xml"/>
+    <mapping resource="proj/entity/LopMonHoc.hbm.xml"/>
+    <mapping resource="proj/entity/KetQuaHoc.hbm.xml"/>
+    <mapping resource="proj/entity/CanBo.hbm.xml"/>
+    <mapping resource="proj/entity/SinhVienDangKyHoc.hbm.xml"/>
+    <mapping resource="proj/entity/MonHoc.hbm.xml"/>
+    <mapping resource="proj/entity/MienHoc.hbm.xml"/>
+    <mapping resource="proj/entity/SinhVien.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
